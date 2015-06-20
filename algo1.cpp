@@ -4,10 +4,14 @@
 class QuickUnion{
 private: 
   std::vector<int> Id;
+  int N;
 
 public:
-  QuickUnion(std::vector<int> Index): Id{Index} {}
-  ~QuickUnion();
+  QuickUnion(int n): Id{}, N{n} {
+     for(auto i =0; i< N; i++)
+      Id.push_back(i);
+  }
+  ~QuickUnion()=default;
 
   int root(int i);
   bool connected(int p, int q);
