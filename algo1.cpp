@@ -47,18 +47,20 @@ public:
     for(auto i =0; i< N; i++)
       Id.push_back(i);
   }
-  //~QuickFind();
+  ~QuickFind()=default; //Hell need to declare destructor with {} or with default (C++11) at the end
   
   bool connected(int p, int q);
   void Union(int p, int q);
   void Print();
 };
 
+//check if two nodes are connected by comparing the id of nodes
 bool QuickFind::connected(int p, int q)
 {
   return Id[p]==Id[q];
 }
 
+//Set the id of both nodes to be equal if they are connected 
 void QuickFind::Union(int p, int q)
 {
   int pid = Id[p];
